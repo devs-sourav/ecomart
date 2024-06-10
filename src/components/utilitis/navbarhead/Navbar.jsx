@@ -77,26 +77,26 @@ const iconList = [
 ]
 
 const Navbar = () => {
-    const [show, setshow] = useState(false);
+
   return (
     <nav>
         <Containar>
             <div className='flex flex-wrap items-center justify-between'>
-                <div className='flex flex-wrap items-center gap-70'>
+                <div className='flex flex-wrap items-center gap-x-70'>
                     <div>
                         <img src={ecomartLogo}/>
                     </div>
                     <div>
-                        <ul className='flex flex-wrap gap-8 py-7'>
+                        <ul className='flex flex-wrap gap-8 '>
                             {                             
                                 menuList.map((item,index)=>(
-                                    <li key={index} className='relative group  text-lg flex gap-x-1 items-center font-medium leading-5 text-secondary font-jost'><Link className='group-hover:text-primary  transition-all ease-linear duration-100' to={"/"}>{item.name}</Link>
+                                    <li key={index} className='relative group py-9 text-lg flex gap-x-1 items-center font-medium leading-5 text-secondary cursor-pointer font-jost'><Link className='group-hover:text-primary  transition-all ease-linear duration-100' to={"/"}>{item.name}</Link>
                                     {
                                         item.dropdown && <IoIosArrowDown className={`text-sm group-hover:text-primary transition-all ease-linear duration-100 group-hover:rotate-180`}/>
                                     }
                                     {   
                                         item.dropdown &&
-                                        <ul className='absolute left-0 group-hover:opacity-100 group-hover:visible group-hover:top-[56px] top-[66px] w-60 border border-t-4 py-4 border-t-primary shadow-xl invisible opacity-0 transition-all ease-linear duration-200'>
+                                        <ul className='absolute cursor-default left-0 group-hover:opacity-100 group-hover:visible group-hover:top-[100%] top-[120%] w-60 border border-t-4 py-4 border-t-primary shadow-xl invisible opacity-0 transition-all ease-linear duration-200'>
                                             {
                                                 // item.dropdown.map((dropitem,index)=>(
                                                 //     <li key={index}>{dropitem.name}</li>
@@ -115,7 +115,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className='flex flex-wrap items-center'>
-                    <ul className='py-5 flex flex-wrap gap-x-7'>
+                    <ul className='flex flex-wrap gap-x-7'>
                         {
                            iconList.map((item, index) => {
                             const Icon = item.icon;
