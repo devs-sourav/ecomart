@@ -1,5 +1,5 @@
 import React from 'react'
-import NavbarHead from '../components/layouts/NavbarHead'
+import NavbarHead from '../components/layouts/navbar/NavbarHead'
 
 const Home = () => {
   return (

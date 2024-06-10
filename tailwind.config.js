@@ -11,8 +11,12 @@ export default {
         },
         colors: {
           'primary': '#8F4DA7',
-          'secondary':'#171717'
-        }, 
+          'secondary':'#171717',
+          'bordergray':'#eaebee'
+        },
+        spacing: {
+          '70': '70px',
+        } 
     }, 
   }, 
   plugins: [],

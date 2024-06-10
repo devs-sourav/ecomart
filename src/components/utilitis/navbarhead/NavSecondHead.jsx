@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { updateCurrencyValue } from '../../slices/currency/CurrencySlice';
+import { updateCurrencyValue } from '../../../slices/currency/CurrencySlice';
 import Containar from './Containar';
 import { IoIosArrowDown } from "react-icons/io";
-import { updateLanguageValue } from '../../slices/language/LanguageSlice';
+import { updateLanguageValue } from '../../../slices/language/LanguageSlice';
 
 const langData = [
     { language: "English" },
@@ -82,22 +82,22 @@ const NavSecondHead = () => {
     };
 
     return (
-        <section className='border-b border-b-gray-200'>
+        <section className='border-b border-b-bordergray'>
             <Containar>
-                <div className='flex justify-between items-center'>
+                <div className='flex justify-between flex-wrap items-center'>
                     <ul className='flex py-2.5 text-base font-jost'>
-                        <li className='pr-5 border-r border-r-gray-200'>
+                        <li className='pr-5 border-r border-r-bordergray'>
                             <button className='hover:text-primary transition-all ease-linear text-secondary' aria-label="About Us">About Us</button>
                         </li>
                         <li className='pl-5'>
                             <button className='hover:text-primary transition-all ease-linear text-secondary' aria-label="My Account">My Account</button>
                         </li>
                     </ul>
-                    <ul className='flex py-2.5 text-base font-jost'>
-                        <li className='pr-5 border-r border-r-gray-200'>
+                    <ul className='flex flex-wrap py-2.5 text-base font-jost'>
+                        <li className='pr-5 border-r border-r-bordergray'>
                             <button className='hover:text-primary transition-all ease-linear text-secondary' aria-label="Track Order">Track Order</button>
                         </li>
-                        <li className='px-5 border-r border-r-gray-200 relative' ref={languageRef}>
+                        <li className='px-5 border-r border-r-bordergray relative' ref={languageRef}>
                             <button
                                 onClick={() => setShowLanguage(!showLanguage)}
                                 className='flex gap-x-1 items-center hover:text-primary transition-all ease-linear text-secondary'
