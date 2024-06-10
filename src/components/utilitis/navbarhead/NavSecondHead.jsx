@@ -97,10 +97,10 @@ const NavSecondHead = () => {
                         <li className='pr-5 border-r border-r-bordergray'>
                             <button className='hover:text-primary transition-all ease-linear text-secondary' aria-label="Track Order">Track Order</button>
                         </li>
-                        <li className='px-5 border-r border-r-bordergray relative' ref={languageRef}>
+                        <li className='px-5 border-r group border-r-bordergray relative' ref={languageRef}>
                             <button
                                 onClick={() => setShowLanguage(!showLanguage)}
-                                className='flex gap-x-1 items-center hover:text-primary transition-all ease-linear text-secondary'
+                                className='flex gap-x-1 items-center group-hover:text-primary transition-all ease-linear text-secondary'
                                 aria-label="Language Selector"
                             >
                                 {language}
@@ -108,7 +108,7 @@ const NavSecondHead = () => {
                                     <IoIosArrowDown className={showLanguage ? 'rotate-180 transition-all ease-linear' : 'rotate-0 transition-all ease-linear'} />
                                 </span>
                             </button>
-                            <ul className={`absolute top-full mt-1 bg-white leading-10 rounded-md drop_language ${showLanguage ? 'show' : ''}`}>
+                            <ul className={`absolute top-full mt-1 z-10 bg-white leading-10 rounded-md drop_language ${showLanguage ? 'show' : ''}`}>
                                 {langData.map((item, index) => (
                                     <li key={index} className='hover:bg-[#f6f6f6] pl-[18px] pr-[29px]'>
                                         <button
@@ -121,10 +121,10 @@ const NavSecondHead = () => {
                                 ))}
                             </ul>
                         </li>
-                        <li className='pl-5 relative' ref={currencyRef}>
+                        <li className='pl-5 relative group' ref={currencyRef}>
                             <button
                                 onClick={() => setShowCurrency(!showCurrency)}
-                                className='flex gap-x-1 items-center hover:text-primary transition-all ease-linear text-secondary'
+                                className='flex gap-x-1 items-center group-hover:text-primary transition-all ease-linear text-secondary'
                                 aria-label="Currency Selector"
                             >
                                 {currency}
@@ -132,7 +132,7 @@ const NavSecondHead = () => {
                                     <IoIosArrowDown className={showCurrency ? 'rotate-180 transition-all ease-linear' : 'rotate-0 transition-all ease-linear'} />
                                 </span>
                             </button>
-                            <ul className={`absolute top-full mt-1 bg-white leading-10 rounded-md drop_currency ${showCurrency ? 'show' : ''}`}>
+                            <ul className={`absolute z-10 top-full mt-1 bg-white leading-10 rounded-md drop_currency ${showCurrency ? 'show' : ''}`}>
                                 {curenData.map((item, index) => (
                                     <li key={index} className='hover:bg-[#f6f6f6] pl-[18px] pr-[29px]'>
                                         <button
