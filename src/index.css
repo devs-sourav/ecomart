@@ -36,3 +36,6 @@
     pointer-events: auto; /* Enable interaction */
     max-height: 200px; /* Adjust based on content size */
 }
+.shadowCust{
+    box-shadow: 0 6px 12px rgba(0,0,0,.176);
+}

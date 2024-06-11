@@ -9,6 +9,7 @@ import { CiHeart } from "react-icons/ci";
 import { Link } from 'react-router-dom';
 import { IoIosArrowDown } from "react-icons/io";
 
+
 const menuList = [
     {
         name:"Home",
@@ -26,6 +27,22 @@ const menuList = [
                 name:"Shop Details",
                 link:"/"
             },
+            {
+                name:"Wishlist",
+                link:"/"
+            },
+            {
+                name:"Cart",
+                link:"/"
+            },
+            {
+                name:"Compare",
+                link:"/"
+            },
+            {
+                name:"Checkout",
+                link:"/"
+            },
         ]
     },
     {
@@ -34,19 +51,95 @@ const menuList = [
         dropdown:[
             {
                 name:"About",
+                link:"/",
+                subdropdown:[
+                    {
+                        name:"Shop Sidebar 5 Column",
+                        link:"/"
+                    },
+                    {
+                        name:"Shop Sidebar 4 Column",
+                        link:"/"
+                    },
+                    {
+                        name:"Shop Sidebar 3 Column",
+                        link:"/"
+                    },
+                    {
+                        name:"Shop Full 6 Column",
+                        link:"/"
+                    },
+                    {
+                        name:"Shop Full 5 Column",
+                        link:"/"
+                    },
+                    {
+                        name:"Shop Full 4 Column",
+                        link:"/"
+                    },
+                    {
+                        name:"Group Product",
+                        link:"/"
+                    },
+                ]
+            },
+            {
+                name:"Become Vendor",
+                link:"/"
+            },
+            {
+                name:"Create Vendor Account",
+                link:"/"
+            },
+            {
+                name:"Vendors List",
                 link:"/"
             },
             {
                 name:"Profile",
                 link:"/"
             },
-        ]
-    },
-    {
-        name:"Blog",
-        link:"/",
-        // dropdown:[]
-    },
+            {
+                name:"Track Order",
+                link:"/"
+            },
+            {
+                name:"Privecy Policy",
+                link:"/"
+            },
+            {
+                name:"Register",
+                link:"/"
+            },
+            {
+                name:"Login",
+                link:"/"
+            },
+            {
+                name:"FAQ",
+                link:"/"
+            },
+            {
+                name:"404 Page",
+                link:"/"
+            },
+            ]
+            },
+            {
+                name:"Blog",
+                link:"/",
+                dropdown:[
+                    {
+                        name:"Blog",
+                        link:"/"
+                    },
+                    {
+                        name:"Blog Details",
+                        link:"/"
+                    },
+
+                ]
+                },
     {
         name:"Contact",
         link:"/",
@@ -87,26 +180,46 @@ const Navbar = () => {
                         <img src={ecomartLogo}/>
                     </div>
                     <div>
-                        <ul className='flex flex-wrap gap-8 '>
+                        <ul className='flex flex-wrap gap-x-7 font-jost'>
                             {                             
                                 menuList.map((item,index)=>(
-                                    <li key={index} className='relative group py-9 text-lg flex gap-x-1 items-center font-medium leading-5 text-secondary cursor-pointer font-jost'><Link className='group-hover:text-primary  transition-all ease-linear duration-100' to={"/"}>{item.name}</Link>
-                                    {
-                                        item.dropdown && <IoIosArrowDown className={`text-sm group-hover:text-primary transition-all ease-linear duration-100 group-hover:rotate-180`}/>
-                                    }
-                                    {   
-                                        item.dropdown &&
-                                        <ul className='absolute cursor-default left-0 group-hover:opacity-100 group-hover:visible group-hover:top-[100%] top-[120%] w-60 border border-t-4 py-4 border-t-primary shadow-xl invisible opacity-0 transition-all ease-linear duration-200'>
-                                            {
-                                                // item.dropdown.map((dropitem,index)=>(
-                                                //     <li key={index}>{dropitem.name}</li>
-                                                // ))
-                                                item.dropdown.map((dropitem,dropindex)=>(
-                                                    <li className='px-6 py-2' key={dropindex}><Link to={dropitem.link}>{dropitem.name}</Link></li>
-                                                ))
-                                            }
-                                        </ul>
-                                    }
+                                    <li key={index} className='relative group py-9 text-lg flex gap-x-1 items-center font-medium leading-5 text-secondary cursor-pointer font-jost'>
+                                        <Link className='group-hover:text-primary  transition-all ease-linear duration-100' to={"/"}>{item.name}</Link>
+                                        {
+                                            item.dropdown && <IoIosArrowDown className={`text-sm group-hover:text-primary transition-all ease-linear duration-100 group-hover:rotate-180`}/>
+                                        }
+                                        {   
+                                            item.dropdown &&
+                                            <ul className='absolute cursor-default left-0 bg-white group-hover:opacity-100 group-hover:visible group-hover:top-[100%] top-[120%] w-64 border border-t-4 py-4 border-t-primary invisible shadowCust opacity-0 transition-all ease-linear duration-200'>
+                                                {
+                                                    // item.dropdown.map((dropitem,index)=>(
+                                                    //     <li key={index}>{dropitem.name}</li>
+                                                    // ))
+                                                    item.dropdown.map((dropitem,dropindex)=>(
+                                                        <li className='px-6 py-2 group/edit flex items-center justify-between hover:text-primary transition-all ease-linear duration-300' key={dropindex}>
+                                                            <Link className='text-lg font-jost font-normal leading-[20px] group-hover/edit:pl-1.5 hover:text-primary transition-all ease-linear duration-200' to={dropitem.link}>{dropitem.name}</Link>
+                                                            {
+                                                                dropitem.subdropdown &&
+                                                                <span className=''><IoIosArrowDown className='text-sm group-hover/edit:rotate-180 transition-all ease-linear duration-200'/></span>
+                                                            }
+                                                            {   
+                                                                dropitem.subdropdown &&
+                                                                <ul className='absolute  cursor-default left-full  bg-white group-hover/edit:opacity-100 group-hover:visible group-hover/edit:top-5 top-10 w-64 border border-t-4 py-4 border-t-primary shadowCust invisible opacity-0 z-20 transition-all ease-linear duration-200'>
+                                                                    {
+                                                                        // item.dropdown.map((dropitem,index)=>(
+                                                                        //     <li key={index}>{dropitem.name}</li>
+                                                                        // ))
+                                                                        dropitem.subdropdown.map((subdropitem,subdropindex)=>(
+                                                                            <li className='px-6 py-2' key={subdropindex}><Link className='text-lg font-jost font-normal leading-[20px] hover:pl-1.5 text-secondary hover:text-primary transition-all ease-linear duration-200' to={subdropitem.link}>{subdropitem.name}</Link></li>
+                                                                        ))
+                                                                    }
+                                                                </ul>
+                                                            }
+                                                        </li>
+                                                    ))
+                                                }
+                                            </ul>
+                                        }
                                         
                                     </li>
                                 ))
