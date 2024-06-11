@@ -21,36 +21,6 @@ const menuList = [
         dropdown:[
             {
                 name:"Shop",
-                link:"/"
-            },
-            {
-                name:"Shop Details",
-                link:"/"
-            },
-            {
-                name:"Wishlist",
-                link:"/"
-            },
-            {
-                name:"Cart",
-                link:"/"
-            },
-            {
-                name:"Compare",
-                link:"/"
-            },
-            {
-                name:"Checkout",
-                link:"/"
-            },
-        ]
-    },
-    {
-        name:"Pages",
-        link:"/",
-        dropdown:[
-            {
-                name:"About",
                 link:"/",
                 subdropdown:[
                     {
@@ -82,6 +52,37 @@ const menuList = [
                         link:"/"
                     },
                 ]
+            },
+            {
+                name:"Shop Details",
+                link:"/"
+            },
+            {
+                name:"Wishlist",
+                link:"/"
+            },
+            {
+                name:"Cart",
+                link:"/"
+            },
+            {
+                name:"Compare",
+                link:"/"
+            },
+            {
+                name:"Checkout",
+                link:"/"
+            },
+        ]
+    },
+    {
+        name:"Pages",
+        link:"/",
+        dropdown:[
+            {
+                name:"About",
+                link:"/",
+                
             },
             {
                 name:"Become Vendor",
