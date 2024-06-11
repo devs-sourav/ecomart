@@ -190,7 +190,7 @@ const Navbar = () => {
                                         }
                                         {   
                                             item.dropdown &&
-                                            <ul className='absolute cursor-default left-0 bg-white group-hover:opacity-100 group-hover:visible group-hover:top-[100%] top-[120%] w-64 border border-t-4 py-4 border-t-primary invisible shadowCust opacity-0 transition-all ease-linear duration-200'>
+                                            <ul className='z-10 absolute cursor-default left-0 bg-white group-hover:opacity-100 group-hover:visible group-hover:top-[100%] top-[120%] w-64 border border-t-4 py-4 border-t-primary invisible shadowCust opacity-0 transition-all ease-linear duration-200'>
                                                 {
                                                     // item.dropdown.map((dropitem,index)=>(
                                                     //     <li key={index}>{dropitem.name}</li>
