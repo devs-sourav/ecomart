@@ -12,11 +12,15 @@ export default {
         colors: {
           'primary': '#8F4DA7',
           'secondary':'#171717',
-          'bordergray':'#eaebee'
+          'bordergray':'#eaebee',
+          'graytext':'#707070'
         },
         spacing: {
           '70': '70px',
-        } 
+        },
+        boxShadow: {
+          'proshadow': '0 3px 14px -7px rgb(15, 9, 15)',
+        },
     }, 
   }, 
   plugins: [],

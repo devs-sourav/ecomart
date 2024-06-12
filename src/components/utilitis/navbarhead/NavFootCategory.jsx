@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+
 import Containar from './Containar';
 import { IoIosArrowDown, IoMdMenu,IoIosSearch } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { FaFacebook, FaFacebookF, FaInstagram, FaPinterestP, FaTwitter } from 'react-icons/fa';
+import Search from './Search';
 
 const categoryList = [
   { name: "Shirts", quantity: 8, link: "/" },
@@ -88,12 +90,13 @@ const NavFootCategory = () => {
                 </div>
               )}
             </div>
-            <div className='w-[390px] h-70'>
+            {/* <div className='w-[390px] h-70'>
               <form className='z-0 w-full h-full relative'>
                 <input className='w-full h-full bg-[#f6f6f6] rounded-md pl-8  pr-12 focus:ring-transparent focus:border-none outline-none placeholder:text-base placeholder:text-[#707070]' placeholder='Search Products....'/>
                 <IoIosSearch className='absolute text-2xl text-secondary right-3 top-1/2 -translate-y-1/2'/>
               </form>
-            </div>
+            </div> */}
+            <Search/>
           </div>
           <div className='flex flex-wrap items-center'>
             <div className='flex items-center gap-x-3.5'>
