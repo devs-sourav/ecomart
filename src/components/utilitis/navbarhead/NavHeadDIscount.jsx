@@ -5,7 +5,7 @@ import { IoClose } from "react-icons/io5";
 const NavHeadDIscount = () => {
   const [show,setShow] = useState(true)
   return (
-    show && <section className='py-2 w-full relative bg-primary'>
+    show && <section className='hidden md:block py-2 w-full relative bg-primary'>
       <div className='text-white absolute right-5 top-1/2 -translate-y-1/2 text-2xl cursor-pointer'><IoClose onClick={()=>setShow(false)} /></div>
         <Containar>
             <div className='text-center bg-primary text-white'>

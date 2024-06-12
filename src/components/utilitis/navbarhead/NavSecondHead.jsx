@@ -82,7 +82,7 @@ const NavSecondHead = () => {
     };
 
     return (
-        <section className='border-b border-b-bordergray'>
+        <section className='border-b hidden md:block border-b-bordergray'>
             <Containar>
                 <div className='flex justify-between flex-wrap items-center'>
                     <ul className='flex py-2.5 text-base font-jost'>

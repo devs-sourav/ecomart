@@ -21,6 +21,11 @@ export default {
         boxShadow: {
           'proshadow': '0 3px 14px -7px rgb(15, 9, 15)',
         },
+        screens: {
+          'tabscreen': '950px',
+          'smallmobile': '400px',
+          'bigtab': '1130px',
+        },
     }, 
   }, 
   plugins: [],

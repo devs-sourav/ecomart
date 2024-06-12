@@ -1,8 +1,13 @@
 import React from 'react'
+import Containar from '../navbarhead/Containar'
 
 const footerTop = () => {
   return (
-    <div>footerTop</div>
+    <section>
+      <Containar>
+        
+      </Containar>
+    </section>
   )
 }
 

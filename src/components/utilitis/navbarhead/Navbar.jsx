@@ -175,12 +175,12 @@ const Navbar = () => {
   return (
     <nav>
         <Containar>
-            <div className='flex flex-wrap items-center justify-between'>
-                <div className='flex flex-wrap items-center gap-x-70'>
-                    <div>
-                        <img src={ecomartLogo}/>
+            <div className='flex flex-wrap items-center py-4 tabscreen:py-0 justify-between'>
+                <div className='flex flex-wrap items-center gap-x-14 md:gap-x-70'>
+                    <div className='w-32 md:w-36 lg:w-40'>
+                        <img className='w-full' src={ecomartLogo}/>
                     </div>
-                    <div>
+                    <div className=' hidden tabscreen:block'>
                         <ul className='flex flex-wrap gap-x-7 font-jost'>
                             {                             
                                 menuList.map((item,index)=>(
@@ -229,18 +229,18 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className='flex flex-wrap items-center'>
-                    <ul className='flex flex-wrap gap-x-7'>
+                    <ul className='flex flex-wrap items-cente mt-1 gap-x-1 md:gap-x-5 lg:gap-x-7'>
                         {
                            iconList.map((item, index) => {
                             const Icon = item.icon;
                             return (
-                                <li key={index} className=''>
-                                    <Link to="/" className='w-14 h-14 relative rounded-full border border-bordergray flex flex-wrap justify-center items-center' aria-label={`Link with ${item.name || 'icon'}`}>
+                                <li key={index} className={`flex justify-center items-center ${item.name == 'compare' && 'smallmobile:block hidden'}`}>
+                                    <Link to="/" className='w-10 h-10 lg:w-14 lg:h-14 relative rounded-full lg:border lg:border-bordergray flex flex-wrap justify-center items-center' aria-label={`Link with ${item.name || 'icon'}`}>
                                         <Icon className='text-[20px] text-secondary' aria-hidden="true" />
                                         {
                                             item.lenActive && 
-                                            <div className='absolute -right-1 -top-1'>
-                                                <span className={`w-6 h-6 rounded-full flex justify-center items-center text-white ${item.color ? item?.color : "bg-secondary"} leading-6 mb-0.5`}>
+                                            <div className='absolute -right-0.5 -top-0.5 lg:-right-1 lg:-top-1'>
+                                                <span className={`w-5 h-5 lg:w-6 lg:h-6  text-[12px] lg:text-sm rounded-full flex justify-center items-center text-white ${item.color ? item?.color : "bg-secondary"} leading-6`}>
                                                     0
                                                 </span>
                                             </div>
@@ -252,10 +252,17 @@ const Navbar = () => {
                         })
                         
                         }
-                        <li  className=''>
+                        <li  className='hidden bigtab:block'>
                             <Link to="/" className='w-14 h-14 relative rounded-full bg-[#f6f6f6] flex flex-wrap justify-center items-center'>
                                 <AiOutlineUser className='text-[20px] text-secondary' aria-hidden="true" />
                             </Link>
+                        </li>
+                        <li className='w-10 h-10 mb-1 lg:w-14 lg:h-14 bigtab:hidden flex justify-end items-center'>
+                            <button className='w-5 h-3.5 flex group flex-col overflow-hidden justify-between'>
+                                <span className='h-0.5 w-full bg-secondary'></span>
+                                <span className='h-0.5 ml-[9px] group-hover:ml-0 transition-all ease-linear duration-300 w-full bg-secondary'></span>
+                                <span className='h-0.5 w-full bg-secondary'></span>
+                            </button>
                         </li>
 
                     </ul>
