@@ -283,7 +283,7 @@ const Navbar = () => {
         </div>
       </Drawer>
       <Containar>
-        <div className="flex items-center justify-between relative">
+        <div className="flex items-center justify-between relative py-5 md:py-3 ">
           <div className="flex items-center gap-x-7 lg:gap-x-14">
             <div className="w-[90px] smallmobile:w-[105px]">
               <img className="w-full" src={ecomartLogo} alt="Ecomart Logo" />
