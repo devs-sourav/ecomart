@@ -129,6 +129,9 @@ const Navbar = () => {
   };
 
   const handleMenuClick = (index) => {
+    if (!menuList[index].dropdown) {
+      setIsOpen(false); // Close drawer if the clicked menu item has no dropdown
+    }
     setExpandedMenu(expandedMenu === index ? null : index);
     setExpandedSubMenu(null); // Close any open submenus when a new menu is clicked
   };
@@ -139,7 +142,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <Drawer open={isOpen} onClose={toggleDrawer} direction="right" size={365}>
+      <Drawer open={isOpen} onClose={toggleDrawer} direction="right" size={355}>
         <div className="h-full py-11 pl-11 pr-9 overflow-y-scroll">
           <ul className="flex items-center justify-between">
             <li>
@@ -171,6 +174,7 @@ const Navbar = () => {
                           item.dropdown ? 'text-black text-base font-normal' : 'text-black text-base font-normal py-[10.5px]'
                         } hover:text-primary`}
                         to={item.link}
+                        onClick={() => handleMenuClick(index)} // Add onClick handler here
                       >
                         {item.name}
                       </Link>
@@ -212,7 +216,7 @@ const Navbar = () => {
                               <ul className="w-full">
                                 {subitem.subdropdown.map((subdropitem, subdropindex) => (
                                   <li key={subdropindex} className="px-8 py-2 border-b border-bordergray">
-                                    <Link to={subdropitem.link} onClick={toggleDrawer} className="hover:text-primary">
+                                    <Link to={subdropitem.link} onClick={toggleDrawer} className="hover:text-primary text-base">
                                       {subdropitem.name}
                                     </Link>
                                   </li>
@@ -266,7 +270,7 @@ const Navbar = () => {
                 return (
                   <li key={index}>
                     <a
-                      className="w-10 h-10 flex flex-wrap justify-center items-center rounded-full bg-primary text-white"
+                      className="w-10 h-10 flex flex-wrap justify-center items-center rounded-full hover:bg-primary text-secondary hover:text-white transition-all ease-linear duration-300"
                       href={item.link}
                     >
                       <SocialIcon />
