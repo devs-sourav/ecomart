@@ -154,10 +154,10 @@ const Navbar = () => {
               <RxCross1 />
             </li>
           </ul>
-          <div className="my-4">
+          <div className="my-4 bigtab:hidden block">
             <Search drawerSearch="true" />
           </div>
-          <div>
+          <div className='block tabscreen:hidden'>
             <div className="py-1">
               {menuList.map((item, index) => {
                 const flagofborder = index < menuList.length - 1;
