@@ -1,8 +1,13 @@
 import React from 'react'
+import FooterTopPart from '../../utilitis/footer/FooterTopPart'
+import FooterSecondPart from '../../utilitis/footer/FooterSecondPart'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer>
+      <FooterTopPart/>
+      <FooterSecondPart/>
+    </footer>
   )
 }
 
