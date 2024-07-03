@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+
+import { useState, useEffect, useRef } from 'react';
 
 import Containar from './Containar';
-import { IoIosArrowDown, IoMdMenu,IoIosSearch } from "react-icons/io";
+import { IoIosArrowDown, IoMdMenu } from "react-icons/io";
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaFacebookF, FaInstagram, FaPinterestP, FaTwitter } from 'react-icons/fa';
+import {  FaFacebookF, FaInstagram, FaPinterestP, FaTwitter } from 'react-icons/fa';
 import Search from './Search';
 
 const categoryList = [

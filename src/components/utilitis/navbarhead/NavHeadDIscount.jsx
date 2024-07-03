@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import Containar from './Containar'
 import { IoClose } from "react-icons/io5";
 

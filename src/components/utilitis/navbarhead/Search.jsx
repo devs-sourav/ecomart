@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { IoIosSearch } from 'react-icons/io';
 import { Link } from 'react-router-dom';
 
-const Search = () => {
+const Search = ({drawerSearch}) => {
     const [query, setQuery] = useState("");
     const [productlist, setProductList] = useState([]);
     const [searchProductList, setSearchProductList] = useState([]);
@@ -59,13 +59,13 @@ const Search = () => {
     };
 
     return (
-        <div className='hidden bigtab:block' ref={searchBoxRef}>
-            <div className='w-[390px] h-70 relative'>
+        <div className={`${drawerSearch ? "inline-block mt-8 w-full" : "hidden bigtab:block"}`} ref={searchBoxRef}>
+            <div className={`${drawerSearch ? "w-full h-[60px] relative":"w-[390px] h-70 relative"}`}>
                 <form className='z-0 w-full h-full relative '>
                     <input
                         onChange={(e) => setQuery(e.target.value)}
                         value={query}
-                        className='w-full h-full bg-[#f6f6f6] rounded-md pl-8 pr-12 focus:ring-transparent focus:border-none outline-none placeholder:text-base placeholder:text-[#707070]'
+                        className={`${drawerSearch ? "w-full h-full border border-bordergray rounded-lg pl-4 pr-12 focus:ring-transparent focus:border-secondary outline-none placeholder:text-base placeholder:text-[#707070]" :  "w-full h-full bg-[#f6f6f6] rounded-md pl-8 pr-12 focus:ring-transparent focus:border-none outline-none placeholder:text-base placeholder:text-[#707070]"}`}
                         placeholder='Search Products....'
                         onFocus={() => {
                             if (query.trim() !== '') {
@@ -76,7 +76,7 @@ const Search = () => {
                     <IoIosSearch className='absolute text-2xl text-secondary right-3 top-1/2 -translate-y-1/2' />
                 </form>
                 {isProductListVisible && (
-                    <div className='shadow-proshadow px-2.5 absolute left-0 bg-white w-full overflow-y-scroll top-full products-list max-h-[400px]'>
+                    <div className={`${drawerSearch ? "z-20 shadow-proshadow px-2.5 absolute left-0 bg-white w-full overflow-y-scroll top-full products-list max-h-[350px]" : "shadow-proshadow px-2.5 absolute left-0 bg-white w-full overflow-y-scroll top-full products-list max-h-[400px]"}`}>
                         <div className="bg-white w-full max-h-full font-jost divide-y divide-slate-200">
                             {searchProductList.length > 0 ? (
                                 searchProductList.map(product => (
@@ -87,8 +87,8 @@ const Search = () => {
                                             </div>
                                         </div>
                                         <div className=''>
-                                            <Link to={"/"} onClick={clearInput} className='text-base font-jost leading-5 text-graytext'>{product.title}</Link>
-                                            <p className='text-[15px] font-medium mt-1'>${product.price}</p>
+                                            <Link to={"/"} onClick={clearInput} className={`${drawerSearch ? "text-sm left-3" : "text-base font-jost leading-5 text-graytext"}`}>{product.title}</Link>
+                                            <p className={`${drawerSearch ? "text-[12px] font-medium mt-1 " : "text-[15px] font-medium mt-1"} `}>${product.price}</p>
                                         </div>
                                     </div>
                                 ))
